@@ -14,6 +14,7 @@ namespace TicTacToe.Controllers
     {
         // GET: api/Game
         [HttpGet]
+        [Log]
         public string Get()
         {
             return Game.GetStatus();
@@ -21,6 +22,7 @@ namespace TicTacToe.Controllers
 
         // GET: api/Game/5
         [HttpGet("{id}", Name = "Get")]
+        [Log]
         public void Get(int id)
         {
         }
@@ -37,12 +39,14 @@ namespace TicTacToe.Controllers
 
         // PUT: api/Game/5
         [HttpPut("{id}")]
+        [Log]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
+        [Log]
         public void Delete(int id)
         {
         }

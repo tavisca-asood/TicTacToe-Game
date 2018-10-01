@@ -11,12 +11,15 @@ using TicTacToe.Models;
 
 namespace TicTacToe.Controllers
 {
+    [Route("")]
+    [Route("api/values")]
     [Route("api/[controller]")]
     [ApiController]
     public class IdentityController : ControllerBase
     {
         // GET api/values
         [HttpGet]
+        [Log]
         public string Get()
         {
             return "TicTacToe Game";
@@ -24,6 +27,7 @@ namespace TicTacToe.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
+        [Log]
         public ActionResult Get(int id)
         {
             return null;
@@ -51,12 +55,14 @@ namespace TicTacToe.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
+        [Log]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
+        [Log]
         public void Delete(int id)
         {
         }
